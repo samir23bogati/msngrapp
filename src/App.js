@@ -4,7 +4,6 @@ import MessageList from './components/MessageList';
 const App = () => {
     const [messages, setMessages] = useState([]);
 
-    // Fetch user data from the GoRest API
     useEffect(() => {
         const fetchUsers = async () => {
             try {

@@ -10,12 +10,10 @@ const MessageList = () => {
   const messageEndRef = useRef(null);
   const messageListRef = useRef(null);
 
-  // Fetch initial messages
   useEffect(() => {
     dispatch(fetchMessages());
   }, [dispatch]);
 
-  // Scroll to the bottom when a new message is added
   const scrollToBottom = () => {
     messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -56,7 +54,6 @@ const MessageList = () => {
         <div ref={messageEndRef}></div>
       </div>
 
-      {/* Send message input */}
       <div className="message-input">
         <input
           type="text"
@@ -67,7 +64,6 @@ const MessageList = () => {
         <button onClick={handleSend}>Send</button>
       </div>
 
-      {/* Scroll to bottom button below the message list */}
       <ScrollToBottomButton onClick={scrollToBottom} />
     </div>
   );
